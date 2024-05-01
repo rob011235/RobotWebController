@@ -1,4 +1,4 @@
-#define SECRET_SSID "rob011235"
+#define SECRET_SSID "MikanetStarLink"
 #define SECRET_PASS "5235235235"
 
 #define SPIWIFI       SPI
