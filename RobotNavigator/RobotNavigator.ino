@@ -1,13 +1,11 @@
 /*
-This example creates a client object that connects and transfers
-data using always SSL.
+RobotNavigator.ino
+Date: 1 May 2024
+Programmer: Rob Garner (rgarner011235@gmail.com)
+Purpose: Controller code for a robot that gets commands from a website over wifi and executes them.
 
-It is compatible with the methods normally related to plain
-connections, like client.connect(host, port).
-
-Written by Arturo Guadalupi
+Based on code written by Arturo Guadalupi
 last revision November 2015
-
 */
 
 #include <SPI.h>
@@ -15,7 +13,7 @@ last revision November 2015
 #include <TinyGPS++.h> //to process NMEA messages from gps module
 #include "config.h" 
 
-///////please enter your sensitive data in the Secret tab/config.h
+///////please enter your sensitive data in config.h
 char ssid[] = SECRET_SSID;        // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
@@ -30,7 +28,7 @@ int status = WL_IDLE_STATUS;
 
 // Initialize the SSL client library
 // with the IP address and port of the server
-// that you want to connect to (port 443 is default for HTTPS):
+// that you want to connect to (port 80 is default for HTTP, port 443 is default for HTTPS):
 WiFiClient client;
 
 //Set up variables for next waypoint
@@ -46,7 +44,7 @@ void setup() {
   nextWayPoint.lon = -105.0;
   nextWayPoint.alt = 6000.0;
 
-  //Initialize serial 
+  //Initialize serial connections
   Serial.begin(9600);
   Serial1.begin(9600);
 

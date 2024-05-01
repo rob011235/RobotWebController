@@ -1,5 +1,5 @@
-#define SECRET_SSID "<SSID>"
-#define SECRET_PASS "<Password>"
+#define SECRET_SSID "rob011235"
+#define SECRET_PASS "5235235235"
 
 #define SPIWIFI       SPI
 #define SPIWIFI_SS    10   // Chip select pin
